@@ -41,4 +41,6 @@ void bar(FooBar* obj) {
 void fooBarFree(FooBar* obj) {
     pthread_mutex_destroy(&obj->foo_mutex);
     pthread_mutex_destroy(&obj->bar_mutex);
+    free(obj);
+    obj = NULL;
 }
